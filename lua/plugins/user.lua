@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
@@ -6,7 +6,25 @@ if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 ---@type LazySpec
 return {
-
+  {
+  "vhyrro/luarocks.nvim",
+  priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+  config = true,
+  },
+  {
+    "folke/flash.nvim",
+    keys = {
+      { "T", mode = { "n", "x", "o" }, false },
+    },
+  },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      keys = { "o", false },
+    },
+  },
+  { "nvim-neo-tree/neo-tree.nvim", enabled = false },
+  { "kevinhwang91/nvim-ufo", enabled = false }, 
   -- == Examples of Adding Plugins ==
 
   "andweeb/presence.nvim",
